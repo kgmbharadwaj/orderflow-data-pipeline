@@ -212,11 +212,33 @@ Malformed records are quarantined rather than stopping the entire load.
 
 Files missing required columns fail before their records are written.
 
-## 13. Known Limitations
+### 13. Known Limitations
 
-1. SQLite supports a single writer at a time.
-2. JSON support is limited to JSON Lines.
-3. Processing is sequential and single-process.
-4. Status transition rules are not enforced.
-5. Timestamps are normalized to seconds.
-6. CSV source-line tracking assumes
+1. SQLite supports a single writer at a time, which limits concurrent write operations.
+2. JSON input support is focused on JSON Lines rather than large JSON arrays.
+3. Processing is sequential and single-process; distributed processing is not currently implemented.
+4. Order status transition rules are not enforced.
+5. Timestamps are normalized to seconds, so sub-second precision is not retained.
+6. CSV source-line tracking assumes one physical line per record. Quoted fields containing embedded newlines may affect physical line-number tracking.
+7. Naive timestamps are interpreted as UTC.
+8. During resumed processing, execution counters describe the resumed portion rather than necessarily representing the entire original run.
+9. The pipeline does not currently enforce all possible business-specific order lifecycle rules.
+
+### 14. Conclusion
+
+The verification process demonstrates that OrderFlow can generate, ingest, validate, and reconcile large datasets using a memory-conscious processing approach.
+
+The project provides:
+
+- Incremental CSV and JSON Lines ingestion.
+- Chunk-based database transactions.
+- Schema and business-rule validation.
+- Rejection handling and source traceability.
+- File-level idempotency and checkpoint-based recovery.
+- Order history and current-state management.
+- Data reconciliation and analytical reporting.
+- Automated unit testing and performance benchmarking.
+
+The documented tests and benchmark results represent local execution measurements. Actual performance may vary depending on hardware and environment.
+
+OrderFlow is designed to be reproducible locally, testable, and understandable through its source code and technical documentation.
