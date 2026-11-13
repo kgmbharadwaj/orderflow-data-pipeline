@@ -8,6 +8,38 @@ OrderFlow ingests large order-event files (CSV or JSON Lines) along with custome
 
 It supports chunk-based processing, data validation, quarantine management, resumable loads, late-arriving event handling, and reconciliation against expected results.
 
+## 🏗️ System Architecture
+
+```mermaid
+flowchart TD
+    A["Input Files<br/>Orders CSV / JSONL<br/>Customers CSV<br/>Products CSV"]
+
+    B["Streaming Data Readers"]
+    C["Data Validation"]
+    D{"Record Valid?"}
+
+    E["SQLite Database"]
+    F["Rejects / Quarantine"]
+
+    G["Order History"]
+    H["Fact Orders"]
+    I["Reconciliation"]
+    J["Reports and Metrics"]
+
+    A --> B
+    B --> C
+    C --> D
+    D -->|Yes| E
+    D -->|No| F
+    E --> G
+    E --> H
+    G --> I
+    H --> I
+    F --> I
+    I --> J
+```
+
+
 ## ✨ Key Features
 
 - Streaming and chunk-based data ingestion
