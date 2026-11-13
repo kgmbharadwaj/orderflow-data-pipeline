@@ -12,15 +12,12 @@ It supports chunk-based processing, data validation, quarantine management, resu
 
 ```mermaid
 flowchart TD
-    A["Input Files<br/>Orders CSV / JSONL<br/>Customers CSV<br/>Products CSV"]
-
+    A["Input Files: Orders CSV / JSONL, Customers CSV, Products CSV"]
     B["Streaming Data Readers"]
     C["Data Validation"]
     D{"Record Valid?"}
-
     E["SQLite Database"]
     F["Rejects / Quarantine"]
-
     G["Order History"]
     H["Fact Orders"]
     I["Reconciliation"]
@@ -38,6 +35,9 @@ flowchart TD
     F --> I
     I --> J
 ```
+
+
+
 
 
 ## ✨ Key Features
