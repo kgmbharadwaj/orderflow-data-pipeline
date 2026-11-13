@@ -18,7 +18,7 @@ class Readers(unittest.TestCase):
 
     def path(self, name, text):
         p = os.path.join(self.d, name)
-        with open(p, "w") as f:
+        with open(p, "w", encoding="utf-8") as f:
             f.write(text)
         return p
 
