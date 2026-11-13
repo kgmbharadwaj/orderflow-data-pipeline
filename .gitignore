@@ -7,3 +7,7 @@ data/generated/
 .env
 venv/
 .venv/
+# Local generated files and temporary artifacts
+Orderflow_project.Zip.zip
+benchmark_100k.txt
+test_error.txt
