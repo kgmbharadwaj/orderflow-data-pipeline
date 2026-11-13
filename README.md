@@ -118,25 +118,37 @@ pip install -r requirements.txt
 
 ## ▶️ Running the Project
 
-Run unit tests:
+### 1. Run unit tests
 
 ```bash
 python -m unittest discover -s tests -t . -v
 ```
 
-Generate sample data:
+### 2. Generate sample data
 
 ```bash
 python -m pipeline generate --out data/generated --rows 100000 --seed 42
 ```
 
-Run the benchmark:
+### 3. Load generated data into SQLite
+
+```bash
+python -m pipeline load --db wh.db --customers data/generated/customers.csv --products data/generated/products.csv --orders data/generated/orders.csv
+```
+
+### 4. Run reconciliation
+
+```bash
+python -m pipeline reconcile --db wh.db --orders data/generated/orders.csv --expected data/generated/expected_summary.json --labels data/generated/orders_labels.csv
+```
+
+### 5. Run the benchmark
 
 ```bash
 python -m pipeline benchmark --rows 100000
 ```
 
-Generate reports:
+### 6. Generate reports
 
 ```bash
 python -m pipeline report --db wh.db
