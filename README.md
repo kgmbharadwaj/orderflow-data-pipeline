@@ -158,14 +158,19 @@ python -m pipeline report --db wh.db
 
 The following results were observed during local benchmark runs:
 
-| Metric | 100K rows | 500K rows |
+### Latest 100K Benchmark and Previously Observed 500K Results
+
+| Metric | Latest 100K run | Previous 500K run |
 |---|---:|---:|
 | Rows processed | 100,000 | 500,000 |
 | Rows loaded | 95,148 | 475,733 |
 | Rows rejected | 4,852 | 24,267 |
-| Rows per second | 10,831 | 10,620 |
-| Peak RSS memory | 47 MB | 56.7 MB |
+| Rows per second | 18,563 | 10,620 |
+| Peak RSS | 47.1 MB | 56.7 MB |
+| Load duration | 5.387 sec | Previously observed |
 | Reconciliation | PASS | PASS |
+
+The 100K figures are from the latest local benchmark execution. The 500K figures are from an earlier benchmark run. Actual measurements may vary depending on hardware and environment.
 
 *Benchmark results are environment-dependent and reflect observed local runs.*
 
