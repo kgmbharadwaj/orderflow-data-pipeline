@@ -186,7 +186,18 @@ It checks:
 - Per-line outcome mismatches
 
 **Latest observed reconciliation result: PASS**
+## 📚 Documentation
 
+- [System Architecture](docs/architecture.md)
+- [Data Dictionary](docs/DATA_DICTIONARY.md)
+- [Design and Trade-offs](docs/DESIGN.md)
+## 🔮 Future Enhancements
+
+- Integrate Apache Airflow for workflow orchestration.
+- Implement parallel data processing.
+- Migrate SQLite storage to PostgreSQL.
+- Add a real-time monitoring dashboard.
+- Integrate cloud storage for large datasets.
 ## 🎯 Project Objective
 
 To demonstrate practical data engineering concepts through a reliable, scalable, and testable order-processing pipeline.
