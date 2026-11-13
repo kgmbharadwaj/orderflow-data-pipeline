@@ -1,0 +1,2 @@
+per-key lookups (baseline)         load=4.57s rows/s=21867
+batched IN(...) lookups (shipped)  load=4.06s rows/s=24618

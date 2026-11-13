@@ -1,0 +1,23 @@
+./home/claude/orderflow/pipeline/reconcile.py:49: ResourceWarning: unclosed file <_io.TextIOWrapper name='/tmp/tmp4cxvd1p5/expected_summary.json' mode='r' encoding='utf-8'>
+  exp = json.load(open(expected_summary_path))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+/home/claude/orderflow/pipeline/reconcile.py:89: DeprecationWarning: Binding 1 ('?1') is a named parameter, but you supplied a sequence which requires nameless (qmark) placeholders. Starting with Python 3.14 an sqlite3.ProgrammingError will be raised.
+  n = conn.execute(sql, (sha,)).fetchone()[0]
+............run_failed run_id=run_20261111T103954788122_fd58ef39
+Traceback (most recent call last):
+  File "/home/claude/orderflow/pipeline/loader.py", line 224, in run_file
+    APPLY[entity](conn, ctx, _validate_chunk(ctx, chunk))
+  File "/home/claude/orderflow/tests/test_pipeline.py", line 193, in boom
+    raise ValueError("db exploded mid-chunk")
+ValueError: db exploded mid-chunk
+..run_failed run_id=run_20261111T103954803091_8e5fbfa1
+Traceback (most recent call last):
+  File "/home/claude/orderflow/pipeline/loader.py", line 238, in run_file
+    raise RuntimeError("injected failure after %d chunk(s)" % chunks_done)
+RuntimeError: injected failure after 1 chunk(s)
+..........schema_error run_id=run_20261111T103954882678_51f02344 missing required columns: ['unit_price'] (found: ['order_id', 'customer_id', 'product_id', 'order_ts', 'quantity', 'currency', 'status', 'updated_at', 'price'])
+....................
+----------------------------------------------------------------------
+Ran 45 tests in 0.832s
+
+OK

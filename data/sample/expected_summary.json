@@ -1,0 +1,15 @@
+{
+  "seed": 7,
+  "rows": 300,
+  "label_counts": {
+    "REJECT:DUPLICATE_EVENT": 3,
+    "REJECT:INVALID_CURRENCY": 3,
+    "REJECT:INVALID_ID_FORMAT": 2,
+    "REJECT:INVALID_TIMESTAMP": 3,
+    "REJECT:MALFORMED_ROW": 1,
+    "REJECT:UNKNOWN_PRODUCT": 1,
+    "VALID": 287
+  },
+  "expected_distinct_orders": 271,
+  "expected_final_total_cents": 145879910
+}

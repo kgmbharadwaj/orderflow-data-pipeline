@@ -1,0 +1,2 @@
+# Runtime and tests use the Python standard library only (Python 3.9+).
+# Nothing to install. Optional: pytest can run the suite too (pip install pytest).

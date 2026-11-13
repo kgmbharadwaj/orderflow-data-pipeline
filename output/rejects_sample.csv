@@ -1,0 +1,14 @@
+source_line,reason_code,reason_detail,raw_record,source_file
+19,INVALID_TIMESTAMP,order_ts='2026-09-29T23:38:54Z' updated_at='2026-02-30T10:00:00Z',"ORD-00001026,C000020,P00008,2026-09-29T23:38:54Z,1,10.00,USD,placed,2026-02-30T10:00:00Z",data/sample/orders.csv
+70,INVALID_TIMESTAMP,order_ts='2026-05-14T13:54:31Z' updated_at='yesterday',"ORD-00000877,C000011,P00007,2026-05-14T13:54:31Z,1,10.00,USD,placed,yesterday",data/sample/orders.csv
+84,INVALID_CURRENCY,currency='RUPEE',"ORD-00000482,C000018,P00006,2026-04-10T00:03:07Z,1,10.00,RUPEE,placed,2026-04-10T00:03:07Z",data/sample/orders.csv
+86,DUPLICATE_EVENT,"(order_id, updated_at) already loaded from data/sample/orders.csv:14","ORD-00000962,C000005,P00001,2026-09-10T19:12:00+05:30,10,260,EUR,paid,2026-09-12T09:21:00+05:30",data/sample/orders.csv
+99,INVALID_TIMESTAMP,order_ts='2026-01-07T11:37:22+05:30' updated_at='yesterday',"ORD-00000104,C000016,P00009,2026-01-07T11:37:22+05:30,1,10.00,USD,placed,yesterday",data/sample/orders.csv
+103,MALFORMED_ROW,"expected 9 fields, got 4","ORD-00000422,C000019,P00010,2026-03-26T13:33:00Z",data/sample/orders.csv
+107,DUPLICATE_EVENT,"(order_id, updated_at) already loaded from data/sample/orders.csv:65","ORD-00001128,C000014,P00005,2026-09-11T21:52:13Z,2,935.84,INR,placed,2026-09-11T21:52:13Z",data/sample/orders.csv
+111,INVALID_CURRENCY,currency='XXX',"ORD-00001196,C000013,P00005,2026-08-02T13:57:38Z,1,10.00,XXX,placed,2026-08-02T19:27:38+05:30",data/sample/orders.csv
+119,DUPLICATE_EVENT,"(order_id, updated_at) already loaded from data/sample/orders.csv:2","ORD-00000676,C000018,P00003,2026-07-24T23:40:23+05:30,12,956.4,EUR,shipped,2026-07-27T13:03:23+05:30",data/sample/orders.csv
+164,INVALID_ID_FORMAT,order_id='order_1',"order_1,C000020,P00003,2026-09-05T03:02:52Z,1,10.00,USD,placed,2026-09-05T08:32:52+05:30",data/sample/orders.csv
+232,INVALID_CURRENCY,currency='XXX',"ORD-00001505,C000008,P00010,2026-06-13T15:24:02+05:30,1,10.00,XXX,placed,2026-06-13T15:24:02+05:30",data/sample/orders.csv
+236,UNKNOWN_PRODUCT,product_id=P92368 not in dim_products,"ORD-00000550,C000014,P92368,2026-05-30T11:25:51Z,1,10.00,USD,placed,2026-05-30T11:25:51Z",data/sample/orders.csv
+247,INVALID_ID_FORMAT,order_id='order_1',"order_1,C000018,P00005,2026-01-12T12:20:44+05:30,1,10.00,USD,placed,2026-01-12T12:20:44+05:30",data/sample/orders.csv

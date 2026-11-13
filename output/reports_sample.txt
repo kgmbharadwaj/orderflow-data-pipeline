@@ -1,0 +1,64 @@
+## daily_sales (first 10 rows)
+order_date | currency | orders | units | revenue
+2026-01-01 | INR | 1 | 16 | 10352.0
+2026-01-01 | USD | 1 | 12 | 11973.0
+2026-01-03 | USD | 1 | 16 | 13472.0
+2026-01-06 | INR | 1 | 1 | 993.5
+2026-01-07 | EUR | 1 | 6 | 5280.36
+2026-01-07 | USD | 1 | 10 | 773.0
+2026-01-09 | INR | 2 | 9 | 3836.35
+2026-01-10 | EUR | 1 | 5 | 4988.5
+2026-01-10 | USD | 1 | 14 | 8540.0
+2026-01-12 | EUR | 1 | 3 | 2509.26
+
+## orders_by_status
+status | currency | orders | value
+cancelled | EUR | 3 | 28062.58
+cancelled | INR | 3 | 22309.0
+cancelled | USD | 3 | 20718.4
+delivered | EUR | 7 | 21063.11
+delivered | INR | 11 | 68914.43
+delivered | USD | 11 | 47393.64
+paid | EUR | 26 | 201169.5
+paid | INR | 30 | 152767.83
+paid | USD | 25 | 131348.15
+placed | EUR | 33 | 166557.14
+placed | INR | 31 | 132842.98
+placed | USD | 36 | 191403.56
+shipped | EUR | 14 | 84403.58
+shipped | INR | 21 | 83982.94
+shipped | USD | 17 | 105862.26
+
+## revenue_by_currency (excl. cancelled/refunded)
+currency | orders | revenue
+EUR | 80 | 473193.33
+INR | 93 | 438508.18
+USD | 89 | 476007.61
+
+## top_5_customers_by_spend (per currency)
+customer_id | currency | spend
+C000017 | USD | 62231.3
+C000017 | EUR | 55724.58
+C000005 | USD | 52883.67
+C000015 | INR | 50582.8
+C000014 | INR | 44998.71
+
+## rejects_by_reason
+entity | reason_code | rejects
+orders | DUPLICATE_EVENT | 3
+orders | INVALID_CURRENCY | 3
+orders | INVALID_TIMESTAMP | 3
+orders | INVALID_ID_FORMAT | 2
+orders | MALFORMED_ROW | 1
+orders | UNKNOWN_PRODUCT | 1
+
+## late_arriving_events
+late_events
+7
+
+## recent_runs
+run_id | entity | status | rows_read | rows_loaded | rows_rejected | rows_replayed | rows_late | duration_seconds
+run_20261111T103953758682_7cea4cee | customers | SUCCESS | 20 | 20 | 0 | 0 | 0 | 0.001
+run_20261111T103953759960_8c46b780 | products | SUCCESS | 10 | 10 | 0 | 0 | 0 | 0.0
+run_20261111T103953760494_a5c9f555 | orders | SUCCESS | 300 | 287 | 13 | 0 | 7 | 0.01
+
